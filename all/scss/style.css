@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fredoka One", cursive;
+}
+
+a {
+  font-family: inherit;
+  font-weight: 500;
+}
+
+:root {
+  --yellow: #f8b534;
+}
+
+.main-color {
+  color: var(--yellow);
+}
+
+.btn {
+  min-width: 170px;
+  height: 51px;
+  padding: 10px 5px;
+  border: 1px solid var(--yellow);
+  border-radius: 15px;
+  font-size: 20px;
+  outline: none;
+}
+
+.btn:hover {
+  outline: none;
+  background-color: var(--yellow);
+  color: white;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item #home {
+  border-bottom: 4px solid var(--yellow);
+}
+
+.nav-item .slider {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 92%;
+  margin: 0 auto;
+  height: 4px;
+  background-color: var(--yellow);
+  width: 0%;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.nav-item:hover .slider {
+  width: 100%;
+}
+
+.btn:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.intro {
+  background-image: url("../assets/Group 34439.png");
+  -webkit-box-shadow: inset 0px 16px 16px -10px #f5f1f1, inset 0px -1px 8px -10px #eee2e2;
+          box-shadow: inset 0px 16px 16px -10px #f5f1f1, inset 0px -1px 8px -10px #eee2e2;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 29px;
+}
+
+.intro p {
+  padding: 10px 300px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #999393;
+}
+
+.intro .litepaper-btn {
+  color: white;
+  background-color: var(--yellow);
+}
+/*# sourceMappingURL=style.css.map */

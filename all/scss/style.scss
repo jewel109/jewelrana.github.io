@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Fredoka One", cursive;
+}
+
+a {
+	font-family: inherit;
+	font-weight: 500;
+}
+:root {
+	--yellow: #f8b534;
+}
+.main-color {
+	color: var(--yellow);
+}
+.btn {
+	min-width: 170px;
+    height: 51px;
+    padding: 10px 5px;
+	border: 1px solid var(--yellow);
+    border-radius: 15px;
+    font-size: 20px;
+    outline: none;
+
+    &:hover{
+        outline: none;
+        background-color: var(--yellow);
+        color:white;
+    }
+}
+
+.nav-item{
+    position: relative;
+
+    #home{  
+        border-bottom: 4px solid var(--yellow);
+    }
+
+    .slider {
+    position: absolute;
+    display:block;
+    left: 0;
+    top:92%;
+    margin:0 auto;
+    height: 4px;
+    background-color: var(--yellow);
+    width: 0%;
+    transition: width 1s;
+    }
+
+    &:hover .slider{
+        width: 100%;
+    }
+    
+}
+.btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.intro{
+    background-image: url("../assets/Group 34439.png");
+    box-shadow: 
+        inset 0px 16px 16px -10px rgb(245, 241, 241),
+        inset 0px -1px 8px -10px rgb(238, 226, 226); 
+    
+    padding:60px 0;
+    text-align: center;
+    h1{
+        font-size: 29px;
+    }
+    p{
+        padding: 10px 300px;
+        font-size: 16px;
+        font-weight: 500;
+        color:rgb(153, 147, 147)
+    }
+    .litepaper-btn{
+        color: white;
+        background-color: var(--yellow);
+    }
+}
+
