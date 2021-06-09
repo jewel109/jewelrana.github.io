@@ -72,18 +72,60 @@ a {
   width: 100%;
 }
 
-.navbar .menu-container {
+.navbar .nav__toggle {
+  width: 2em;
+}
+
+.navbar .nav__toggle .hamburger {
+  position: relative;
   display: block;
   cursor: pointer;
 }
 
-.navbar .menu-container .bar1, .navbar .menu-container .bar2, .navbar .menu-container .bar3 {
-  width: 20px;
+.navbar .nav__toggle .hamburger,
+.navbar .nav__toggle .hamburger::before,
+.navbar .nav__toggle .hamburger::after {
+  cursor: pointer;
+  width: 1.7em;
   height: 2px;
-  background-color: #333;
-  margin: 6px 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  background-color: black;
+  -webkit-transition: opacity 250ms linear, -webkit-transform 350ms ease-in-out;
+  transition: opacity 250ms linear, -webkit-transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out, opacity 250ms linear;
+  transition: transform 350ms ease-in-out, opacity 250ms linear, -webkit-transform 350ms ease-in-out;
+}
+
+.navbar .nav__toggle .hamburger::before,
+.navbar .nav__toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.navbar .nav__toggle .hamburger::before {
+  bottom: 6px;
+}
+
+.navbar .nav__toggle .hamburger::after {
+  top: 6px;
+}
+
+.navbar .nav__toggle:hover {
+  cursor: pointer;
+}
+
+.navbar .nav__open .hamburger {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.navbar .nav__open .hamburger::before {
+  opacity: 0;
+}
+
+.navbar .nav__open .hamburger::after {
+  -webkit-transform: rotate(90deg) translate(-5px);
+          transform: rotate(90deg) translate(-5px);
 }
 
 @media screen and (max-width: 576px) {
@@ -97,9 +139,31 @@ a {
     max-width: 150px;
     height: auto;
   }
-  .navbar .navbar-nav-kf {
-    display: none;
-  }
+}
+
+nav .container-fluid {
+  position: relative;
+}
+
+.nav-show {
+  position: absolute;
+  width: 95%;
+  top: 38px;
+  box-shadow: 4px 5px 11px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 4px 5px 11px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 4px 5px 11px 2px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.nav-show ul {
+  display: block;
+  background-color: white;
+  padding: 1rem 1rem;
+}
+
+.nav-show ul li {
+  display: block;
+  width: 120px;
 }
 
 .btn:focus {
