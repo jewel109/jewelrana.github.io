@@ -1,0 +1,123 @@
+@use '../_custom.scss' as *;
+@use '../components/button';
+.navbar {
+	.nav-item {
+		position:sticky;
+		img {
+			width: 250px;
+			height: auto;
+		}
+		a {
+			font-size: .83rem;
+		}
+
+		#home {
+			border-bottom: 4px solid $yellow;
+		}
+
+		.slider {
+			position: absolute;
+			display: block;
+			left: 0;
+			top: 92%;
+			margin: 0 auto;
+			height: 4px;
+			background-color: $yellow;
+			width: 0%;
+			transition: width 1s;
+		}
+
+		&:hover .slider {
+			width: 100%;
+		}
+	}
+
+	.nav__toggle {
+		width: 2em;
+		.hamburger {
+			position: relative;
+			display: block;
+			cursor: pointer;
+			margin-top: 2px;
+		}
+		.hamburger,
+		.hamburger::before,
+		.hamburger::after {
+			cursor: pointer;
+			width: 1.4em;
+			height: 1.5px;
+			background-color: rgba(0, 0, 0, 0.753);
+			transition: transform 350ms ease-in-out, opacity 250ms linear;
+		}
+
+		.hamburger::before,
+		.hamburger::after {
+			content: "";
+			position: absolute;
+			left: 0;
+		}
+		.hamburger::before {
+			bottom: 6px;
+		}
+		.hamburger::after {
+			top: 6px;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.nav__open {
+		.hamburger {
+			transform: rotate(45deg);
+		}
+		.hamburger::before {
+			opacity: 0;
+		}
+		.hamburger::after {
+			transform: rotate(90deg) translate(-5px);
+		}
+	}
+
+	@media screen and (max-width: $small) {
+		// .btn {
+		// 	max-width: 90px;
+		// 	height: 30px;
+		// 	font-size: 16px;
+		// 	line-height: 8px;
+		// }
+		a {
+			font-size: 14px;
+		}
+		img {
+			max-width: 150px;
+			height: auto;
+		}
+		// .navbar-nav-kf {
+		// 	display: none;
+		// }
+	}
+}
+nav .container-fluid {
+	position: relative;
+}
+.nav-show {
+	position: absolute;
+	width: 96vw;
+	top: 11vh;
+	box-shadow: 4px 5px 11px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 4px 5px 11px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 4px 5px 11px 2px rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
+	z-index: 1000;
+	transition: transform 350ms ease-in-out, opacity 250ms linear;
+	ul {
+		display: block;
+		background-color: white;
+		padding: 1rem 1rem;
+		li {
+			display: block;
+			width: 120px;
+		}
+	}
+}

@@ -1,0 +1,131 @@
+@use '../_custom.scss' as *;
+// @use '../components/_vars.scss';
+
+.intro {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+	background: url("../assets/graph-1x.png");
+	box-shadow: inset 0px 16px 16px -10px rgb(245, 241, 241),
+		inset 0px -1px 8px -10px rgb(238, 226, 226);
+	// overflow: auto;
+	background-size: cover;
+	
+
+	// padding-top: 2rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	// height: 200%;
+	// @include media-breakpoint-up($small) { height:60%;}
+	h1 {
+		font-size: 29px;
+		line-height: 39px;
+	}
+	@keyframes running {
+		from {
+			width: 0%;
+		}
+		to {
+			width: 100%;
+		}
+	}
+	.multi-chain {
+		position: relative;
+		display: inline-block;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			line-height: 20px;
+			background-color: $yellow;
+			top: 38px;
+			left: 1%;
+			animation-name: running;
+			animation-duration: 2s;
+			animation-delay: 1s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+	}
+
+	p {
+		padding: 10px;
+		font-size: 14px;
+		font-weight: 400;
+		color: rgb(153, 147, 147);
+		width: 60% ;
+	}
+	.litepaper-btn {
+		color: white;
+		background-color: $yellow;
+		width: 60vw;
+		@include media-breakpoint-up($small) { width: auto;}
+	}
+	ul {
+		margin-top: .78rem;
+		@include media-breakpoint-up($small) {margin-top: -.5rem;margin-left: 1rem !important;}
+		margin-left: 0.5 !important;
+	}
+	.social-btn {
+		position: relative;
+		margin-top: 15px;
+
+		a {
+			cursor: pointer;
+			display: block;
+			position: relative;
+			width: 36px;
+			height: 36px;
+			background-color: $yellow;
+			border-radius: 50%;
+			color: $yellow;
+			z-index: 10;
+			line-height: 36px;
+			&::before {
+				content: "";
+				position: absolute;
+				height: 34px;
+				width: 34px;
+				border-radius: 50%;
+				background-color: white;
+				top: 2px;
+				z-index: -1;
+				left: 0;
+			}
+			&:hover::before {
+				transition: .4s;
+				top: -2px;
+			}
+		}
+	}
+	.piller-img {
+		// position: relative;
+		min-height:40vh;
+		.yellow-piller{
+			width: 70px;
+			height: 50%;
+		}
+		.blue-piller{
+			width: 100px;
+			height: 50%;
+		}
+		@media screen and (min-width: $small) {
+			.yellow-piller {
+				position: absolute;
+				top: 50%;
+				left: 5%;
+				width: 70px;
+				// width: 100%;
+				// height: 100px;
+				// right: 100%;
+			}
+			.blue-piller {
+				position: absolute;
+				top: 50%;
+				left: 82%;
+				width: 100px;
+				// width: 100%;
+				// height: 200px;
+			}
+		}
+	}
+}

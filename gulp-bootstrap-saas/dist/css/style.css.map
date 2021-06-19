@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAAA;;MAAI","file":"style.css","sourcesContent":["@use './custom' \r\n\r\nbody{\r\n\t\r\n}\r\n\r\n\r\n\r\n\r\n\r\n"]}

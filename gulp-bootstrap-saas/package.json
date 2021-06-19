@@ -4,17 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "sass --watch app/scss:assets/css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "bootstrap": "^5.0.1",
     "browser-sync": "^2.26.14",
     "cssnano": "^5.0.6",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-terser": "^2.0.1"
+    "gulp-terser": "^2.0.1",
+    "postcss": "^8.3.2",
+    "sass": "^1.34.1"
+  },
+  "devDependencies": {
+    "gulp-purgecss": "^4.0.3"
   }
 }
