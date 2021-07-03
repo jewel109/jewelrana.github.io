@@ -17,7 +17,6 @@ showMenu("nav__toggle", "nav-menu");
 const navLink = document.querySelectorAll(".nav__link");
 const navClose = document.getElementById("nav__close");
 
-
 function linkAction() {
 	const navMenu = document.getElementById("nav-menu");
 
@@ -31,22 +30,22 @@ navLink.forEach((n) => n.addEventListener("click", linkAction));
 const navToggle = document.getElementById("nav__toggle");
 navToggle.addEventListener("click", () => {
 	// navClose.classList.toggle("bx-menu");
-    // navClose.classList.toggle("bx-menu");
-    navClose.classList.toggle("bx-x");
+	// navClose.classList.toggle("bx-menu");
+	navClose.classList.toggle("bx-x");
 });
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
 	const scrollY = window.pageYOffset;
-	console.log(`scrolly: ${scrollY}`);
+	// console.log(`scrolly: ${scrollY}`);
 	sections.forEach((current) => {
 		const sectionHeight = current.offsetHeight;
-		console.log(`sectionHeight: ${sectionHeight}`);
-		console.log(`offsetTop: ${current.offsetTop}`);
+		// console.log(`sectionHeight: ${sectionHeight}`);
+		// console.log(`offsetTop: ${current.offsetTop}`);
 		const sectionTop = current.offsetTop - 50;
 
-		console.log(`sectionTop: ${sectionTop}`);
+		// console.log(`sectionTop: ${sectionTop}`);
 		sectionId = current.getAttribute("id");
 
 		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -79,3 +78,58 @@ function scrollTop() {
 	else scrollTop.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollTop);
+
+// dark light theme
+
+const themeButton = document.getElementById("theme-button");
+
+const darkTheme = "dark-theme";
+const iconTheme = "bx-sun";
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () =>
+	document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+	themeButton.classList.contains(iconTheme) ? "bx-moon" : "bx-sun";
+
+// We validate if the user previously chose a topic
+if (selectedTheme) {
+	// If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+	document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+		darkTheme
+	);
+	themeButton.classList[selectedIcon === "bx-moon" ? "add" : "remove"](
+		iconTheme
+	);
+}
+
+themeButton.addEventListener("click", () => {
+	document.body.classList.toggle(darkTheme);
+	themeButton.classList.toggle(iconTheme);
+	// We save the theme and the current icon that the user chose
+	localStorage.setItem("selected-theme", getCurrentTheme());
+	localStorage.setItem("selected-icon", getCurrentIcon());
+	console.logo(localStorage)
+});
+
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 2000,
+    reset: true
+});
+
+sr.reveal(`.home__data, .home__img,
+            .about__data, .about__img,
+            .services__content, .menu__content,
+            .app__data, .app__img,
+            .app__content, .contact__button,
+            .footer__content`, {
+    interval: 200
+})
